@@ -19,6 +19,8 @@ let yVelocity=0;
 function drawGame() {
     clearScreen();
     changeSnakePosition();
+
+    checkAppleCollision();
     drawSnake();
     drawApple();
     setTimeout(drawGame, 1000/speed);
@@ -42,6 +44,13 @@ function changeSnakePosition() {
 function drawApple() {
     ctx.fillStyle = "yellow";
     ctx.fillRect(appleX* tileCount, appleY* tileCount, tileSize, tileSize)
+}
+
+function checkAppleCollision() {
+    if(appleX === headX && appleY == headY) {
+        appleX = Math.floor(Math.random() * tileCount);
+        appleY = Math.floor(Math.random() * tileCount);
+    }
 }
 
 // keyboard listeners
