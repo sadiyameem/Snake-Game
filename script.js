@@ -21,8 +21,12 @@ let tailLength = 2;
 let appleX = 5;
 let appleY = 5;
 
-let xVelocity=0;
-let yVelocity=0;
+let xVelocity = 0;
+let yVelocity = 0;
+
+let score = 0;
+
+
 
 // game loops
 function drawGame() {
@@ -41,8 +45,6 @@ function clearScreen() {
 }
 
 function drawSnake() {
-    ctx.fillStyle = 'white'
-    ctx.fillRect(headX * tileCount, headY * tileCount, tileSize,tileSize)
 
     ctx.fillStyle = "pink";
     for(let i =0; i < snakeParts.length; i++){
@@ -50,10 +52,13 @@ function drawSnake() {
         ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize)
     }
 
-    snakeParts.push(new SnakePart(headX, headY)); //put an item at the end of the list next to the head
+    snakeParts.push(new SnakePart(headX, headY)); // put an item at the end of the list next to the head
     if(snakeParts.length > tailLength){
-        snakeParts.shift(); //remove the furthest item from the snake parts if it has more than the tail size
+        snakeParts.shift(); // remove the furthest item from the snake parts if it has more than the tail size
     }
+
+    ctx.fillStyle = 'white';
+    ctx.fillRect(headX * tileCount, headY * tileCount, tileSize,tileSize)
 }
 
 function changeSnakePosition() {
