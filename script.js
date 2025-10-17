@@ -49,6 +49,10 @@ function drawGame() {
 function isGameOver() {
     let gameOver = false;
 
+    if(yVelocity ===0 && xVelocity ===0) {
+        return false;
+    }
+
     //walls
     if(headX < 0) {
         gameOver = true;
