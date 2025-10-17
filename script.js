@@ -26,7 +26,7 @@ let yVelocity = 0;
 
 let score = 0;
 
-
+const eatingSound = new Audio("eating-apple.mp3");
 
 // game loops
 function drawGame() {
@@ -129,6 +129,7 @@ function checkAppleCollision() {
         appleY = Math.floor(Math.random() * tileCount);
         tailLength++;
         score++;
+        eatingSound.play();
     }
 }
 
