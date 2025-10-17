@@ -30,8 +30,13 @@ let score = 0;
 
 // game loops
 function drawGame() {
-    clearScreen();
     changeSnakePosition();
+    let result = isGameOver();
+    if(result){
+        return;
+    }
+
+    clearScreen();
 
     checkAppleCollision();
     drawSnake();
@@ -39,6 +44,18 @@ function drawGame() {
 
     drawScore();
     setTimeout(drawGame, 1000/speed);
+}
+
+function isGameOver() {
+    let gameOver = false;
+
+    //walls
+    if(headX < 0) {
+        gameOver = true;
+    }
+
+
+    return gameOver;
 }
 
 function drawScore() {
