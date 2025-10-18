@@ -11,7 +11,7 @@ into the wall's or the snake's own body.
 - Score tracker that increases with each apple eaten
 - Snake grows longer
 - Game Over screen
-- Eating sound
+- Eating sound effect
 
 # Motivation
 I created this project to learn something new (HTML canvas) and improve my other programming skills.
